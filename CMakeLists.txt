@@ -25,6 +25,10 @@ set(SOURCE_FILES headers/Exception.hpp
                  headers/Clipper.h
                  headers/ScanLineAlgo.h
                  headers/EdgeAndPoint.h
+                 headers/LineWidthComp.h
+                 headers/PixSizeComp.h
+                 headers/Gizmos.h
+                 headers/PolygenController.h
                  
                  src/Logger.cpp
                  src/RenderableObject.cpp
@@ -36,6 +40,9 @@ set(SOURCE_FILES headers/Exception.hpp
                  src/Window.cpp
                  src/Clipper.cpp
                  src/ScanLineAlgo.cpp
+                 src/PolygenController.cpp
+                 src/DrawConfig.cpp
+                 src/Gizmos.cpp
                  )
 
 add_executable(CG-Clip main.cpp glad.c ${SOURCE_FILES})

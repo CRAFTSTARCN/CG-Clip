@@ -32,10 +32,10 @@ Clipper::Clipper(int l, int r, int t, int b, unsigned int rsrc) :
 {
     workStat = false;
     edges.resize(rsrc + 1,nullptr);
-    edgePoints = {
-        {Point(450, 800), Point(200,100)},
-        {Point(200, 100), Point(850,100)},
-        {Point(850, 100), Point(450,800)}
+    pointLoop = {
+        Point(450, 800), 
+        Point(200, 100), 
+        Point(850, 100)
     };
 }
 
@@ -69,6 +69,15 @@ bool Clipper::clipLine(float p, float q, float& u1, float & u2) {
 }
 
 void Clipper::clip() {
+    auto ed = (--pointLoop.end());
+    edgePoints.clear();
+    for(auto p = pointLoop.begin(); p!=ed; ++p) {
+        auto nxt = std::next(p,1);
+        edgePoints.push_back({Point(p->x,p->y),Point(nxt->x,nxt->y)});
+    }
+    edgePoints.push_back({Point(pointLoop.front().x,pointLoop.front().y),
+                          Point(pointLoop.back().x,pointLoop.back().y)});
+
     float p,q,dx,dy,u1 = 0,u2 = 1;
     std::list<std::pair<Point,Point>> nEdgePoints;
     std::pair<Point,Point>* last_cp_index = nullptr;
@@ -166,9 +175,17 @@ void Clipper::spanEdge(int x0, int y0, int x1, int y1) {
         edges[ymin] = new Edge(ymax,(float)ex,dx,edges[ymin]);
 }
 
+std::list<Point>* Clipper::getPointLoop() {
+    return &pointLoop;
+}
+
 void Clipper::update() {
     if(InputHandler::getKeyDown(GLFW_KEY_C)) {
         workStat = !workStat;
+    }
+
+    if(InputHandler::getMouseDownR()) {
+        workStat = false;
     }
 
     if(workStat) {

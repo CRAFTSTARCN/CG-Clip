@@ -12,6 +12,7 @@ class ScanLineAlgo;
 class Clipper : public Component {
 
     protected:
+    std::list<Point> pointLoop;
     std::vector<Edge*> edges;
     std::list<std::pair<Point,Point>> edgePoints;
     int L, R, T, B;
@@ -30,6 +31,8 @@ class Clipper : public Component {
 
     /*By Liang-Barsky Clipping Algorithm*/
     bool clipLine(float p, float q, float& u1, float & u2);
+
+    std::list<Point>* getPointLoop();
 
     virtual void update() override;
     virtual void onActivate() override;

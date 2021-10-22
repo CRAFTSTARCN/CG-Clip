@@ -70,6 +70,9 @@ void ScanLineAlgo::runScanLineAlgo() {
             }
         }
     }
+    while(pointCount < (int)ownerMesh->vertexSize() / 3) {
+        ownerMesh->popVertex();
+    }
     return;
 }
 
@@ -86,12 +89,13 @@ void ScanLineAlgo::update() {
         workStat = !workStat;
     }
 
+    if(InputHandler::getMouseDownR()) {
+        workStat = false;
+        ownerMesh->clearVertex();
+    }
+
     if(workStat) {
         runScanLineAlgo();
-    } else {
-        if(InputHandler::getMouseDownR()) {
-            ownerMesh->clearVertex();
-        }
     }
 }
 
