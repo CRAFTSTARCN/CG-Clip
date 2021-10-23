@@ -121,7 +121,7 @@ void Window::setUpRendProp() {
     gizmos_line->init();
     gizmos_line->initData(100 * 3, 0);
     gizmos_line->setComponent(new Gizmos(clipper->getPointLoop()));
-    gizmos_line->setComponent(new LineWidthComp(2.0f));
+    gizmos_line->setComponent(new LineWidthComp(3.0f));
 
     RenderableObject* gizmos_point = new RenderableObject(GL_DYNAMIC_DRAW, GL_POINTS, shaderGizmos);
     gizmos_point->init();

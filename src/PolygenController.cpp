@@ -34,9 +34,8 @@ void PolygenController::update() {
 }
 
 std::list<Point>::iterator PolygenController::findNearByPoint() {
-    glm::vec2 mouse_pos = glm::vec2(x0,y0);
     for(auto it = pointList->begin(); it != pointList->end(); ++it) {
-        if(std::abs(glm::distance(mouse_pos,glm::vec2((float)it->x,(float)it->y))) <= threshold) {
+        if(std::abs(x0 - it->x) <= threshold && std::abs(y0 - it->y) <= threshold ) {
             return it;
         }
     }
