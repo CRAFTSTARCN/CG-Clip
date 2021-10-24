@@ -209,10 +209,10 @@ void Mesh::drawCall(std::function<void(unsigned int)> rendFunc) {
     rendFunc(VAO);
 }
 
-int Mesh::vertexSize() {
+int Mesh::vertexSize() const {
     return vertices.size();
 }
 
-int Mesh::indicesSize() {
+int Mesh::indicesSize() const {
     return indices.size();
 }

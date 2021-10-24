@@ -53,8 +53,8 @@ class Mesh {
     //draw
     void drawCall(std::function<void(unsigned int)> rendFunc);
 
-    int vertexSize();
-    int indicesSize();
+    int vertexSize() const;
+    int indicesSize() const;
 };
 
 #endif
