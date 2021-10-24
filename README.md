@@ -1,4 +1,5 @@
 # CG-Clip
+*author: 刘寅辰 &emsp;Ag2S@CRAFTSTARCN*  
 Lab3 Clipping
 此项目已上传github
 地址：https://github.com/CRAFTSTARCN/CG-Clip
