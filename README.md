@@ -1,11 +1,11 @@
 # CG-Clip
 *author: 刘寅辰 &emsp;Ag2S@CRAFTSTARCN*  
-Lab3 Clipping
-此项目已上传github
+Lab3 Clipping  
+此项目已上传github  
 地址：https://github.com/CRAFTSTARCN/CG-Clip
 
 ## 关于行数！
-src、headers中的头文件和实现，以及main文件为工程中代码，其它为第三方库  
+**src、headers中的头文件和实现，以及main文件为工程中代码**，其它为第三方库  
 
 下列为自己写的代码行数统计：  
 headers:  
@@ -41,13 +41,13 @@ src:
 &emsp;Window.cpp 134  
 &emsp;main.cpp 12  
 
-**total : 1927**  
+**total : 1927 lines**  
 
-## 引用库：
-为方便进行构建和代码查阅，将第三方库也同时提交  
+## 第三方用库：
 ```glfw```：opengl 库   include/GLFW lib/  
 ```glad```：用于快速调用glfw函数 include/glad include/KHR  
-```glm```：opengl数学库 include/glm  
+```glm```：opengl数学库 include/glm   
+（这些库在文件中未提交） 
 
 ## 关于项目
 
@@ -58,3 +58,4 @@ src:
 按下鼠标右键清空填充情况，并停止工作  
 鼠标左键拖动控制点进行控制，在边上点击可以新增控制点  
 鼠标停留于控制点上，点击D可以删除控制点（至少保留3点）  
+![](./example.png)

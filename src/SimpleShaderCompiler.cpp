@@ -1,9 +1,9 @@
 #include "SimpleShaderCompiler.h"
 
+#include "Logger.h"
+
 #include <string>
 #include <exception>
-
-#include "Logger.h"
 
 int SimpleShaderCompiler::compile(const std::string& filepath, GLenum shaderType) {
     FILE* shaderFile;
