@@ -23,7 +23,6 @@ Window::Window(unsigned int wd, unsigned int ht, const std::string& name) {
         exit(-1);
     }
 
-    stat = new GlobalStat();
     initGLAD(window);
     projection = glm::ortho(0.0f,900.0f,0.0f,900.0f,-10.0f,100.0f);
 }
@@ -32,7 +31,6 @@ Window::~Window() {
     for(auto* obj : objects) {
         delete obj;
     }
-    delete stat;
     for(auto& shader : shaderAsserts) {
         glDeleteProgram(shader.second);
     }
@@ -129,7 +127,6 @@ void Window::setUpRendProp() {
     gizmos_point->setComponent(new Gizmos(clipper->getPointLoop()));
     gizmos_point->setComponent(new PixSizeComp(12.0f));
  
-
     objects.push_back(v_screen);
     objects.push_back(polygen);
     objects.push_back(gizmos_line);

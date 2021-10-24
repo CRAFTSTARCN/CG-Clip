@@ -13,6 +13,7 @@ class Point {
 };
 
 class Edge {
+    
     public:
     int ymax;
     float x;

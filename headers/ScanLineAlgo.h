@@ -19,7 +19,6 @@ class ScanLineAlgo : public Component {
 
     public:
 
-
     ScanLineAlgo();
     ~ScanLineAlgo();
 

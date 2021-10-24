@@ -5,7 +5,6 @@
 #include "glm/glm.hpp"
 
 #include "Mesh.h"
-#include "GlobalStat.h"
 
 #include <functional>
 #include <vector>
@@ -16,15 +15,13 @@ class Component;
 
 class RenderableObject {
     
-protected:
+    protected:
     Mesh* mesh;
     GLenum  rendType;
     int shaderProgram;
     std::map<std::string, Component*> components;
-    GlobalStat* bindedStat;
 
-public:
-
+    public:
     glm::vec3 translate;
     glm::vec3 rotate;
     glm::vec3 scale;
@@ -49,7 +46,6 @@ public:
 
     void setComponent(Component* comp);
 
-    void bindStat(GlobalStat* stat);
 
     void initData(int initVSpace, int initESpace);
 
@@ -58,15 +54,11 @@ public:
     virtual void Start();
 
     virtual void doTransform(const glm::mat4& project);
-
     virtual void rendering();
 
     virtual void renderPipline(const glm::mat4& project);
 
-    GlobalStat* getGlobStat();
-
     Mesh* getMesh();
-
     Component* getComponent(const std::string& compClassName);
 };
 

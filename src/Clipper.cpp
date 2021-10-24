@@ -88,15 +88,10 @@ void Clipper::clip() {
                                Point(edgePoint.first.x + u2*dx,edgePoint.first.y + u2*dy)});
         if(u1 != 0) {
             corssPoint = Point(edgePoint.first.x + u1*dx,edgePoint.first.y + u1*dy);
-            if(last_cp_index == nullptr) {
-                nEdgePoints.push_back({corssPoint,Point()});
-                last_cp_index = &nEdgePoints.back();
-            } else {
-                last_cp_index->second = corssPoint;
-                last_cp_index = nullptr;
-            }
         } else if(u2 != 1) {
             corssPoint = Point(edgePoint.first.x + u2*dx,edgePoint.first.y + u2*dy);
+        }
+        if(u1 !=0 || u2 != 1) {
             if(last_cp_index == nullptr) {
                 nEdgePoints.push_back({corssPoint,Point()});
                 last_cp_index = &nEdgePoints.back();

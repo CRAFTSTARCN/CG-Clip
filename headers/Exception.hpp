@@ -11,7 +11,6 @@ class Throwable : public std::exception {
     std::string msg;
 
     public:
-
     explicit Throwable(const std::string& compileMsg) {
         msg = compileMsg;
     }

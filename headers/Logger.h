@@ -17,9 +17,7 @@ class Logger {
     Logger(std::ostream& binded_stream);
 
     static Logger DEBUG;
-
     static Logger LOG;
-
     static Logger ERROR;
 
     void log(const std::string& content);

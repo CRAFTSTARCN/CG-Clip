@@ -20,7 +20,6 @@ set(SOURCE_FILES headers/Exception.hpp
                  headers/InputHandler.h
                  headers/Component.h
                  headers/Window.h
-                 headers/GlobalStat.h
                  headers/Mesh.h
                  headers/Clipper.h
                  headers/ScanLineAlgo.h
@@ -35,7 +34,6 @@ set(SOURCE_FILES headers/Exception.hpp
                  src/SimpleShaderCompiler.cpp
                  src/InputHandler.cpp
                  src/Component.cpp
-                 src/GlobalStat.cpp
                  src/Mesh.cpp
                  src/Window.cpp
                  src/Clipper.cpp

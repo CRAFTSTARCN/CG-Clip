@@ -47,9 +47,7 @@ void RenderableObject::setComponent(Component* comp) {
     comp->activate();
 }
 
-void RenderableObject::bindStat(GlobalStat* stat) {
-    bindedStat = stat;
-}
+
 
 void RenderableObject::processComponents() {
     for(auto iter = components.begin(); iter != components.end(); ++iter) {
@@ -59,9 +57,7 @@ void RenderableObject::processComponents() {
     }
 }
 
-void RenderableObject::Start() {
-    
-}
+void RenderableObject::Start() {}
 
 void RenderableObject::doTransform(const glm::mat4& project) {
     transfromMatrix = glm::mat4(1.0f);
@@ -120,9 +116,6 @@ void RenderableObject::init(const std::string& fromFile) {
     mesh->importData(fromFile);
 }
 
-GlobalStat* RenderableObject::getGlobStat() {
-    return bindedStat;
-}
 
 Mesh* RenderableObject::getMesh() {
     return mesh;

@@ -15,7 +15,6 @@ class Mesh {
     int sizeVBO,sizeEBO,drawType;
 
     std::vector<float> vertices;
-
     std::vector<int> indices;
 
     void genBuffer();
@@ -49,7 +48,6 @@ class Mesh {
     
     //specially, this shell be called for each frame;
     void updateBufferData();
-
     bool useElement();
 
     //draw

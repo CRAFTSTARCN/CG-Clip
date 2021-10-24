@@ -41,7 +41,6 @@ void ScanLineAlgo::runScanLineAlgo() {
             cur = pre->next;
         }
 
-        
         std::sort(xPoints.begin(),xPoints.end());
         for(int i=1; i<xPoints.size(); i += 2) {
             int l = int(xPoints[i-1]+0.5), r = int(xPoints[i] + 0.5);
@@ -50,7 +49,6 @@ void ScanLineAlgo::runScanLineAlgo() {
             }
         }
         
-
         cur = AT, pre = nullptr;
         while(cur) {
             if(cur->ymax == index) {

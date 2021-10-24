@@ -11,7 +11,6 @@ class Window {
     GLFWwindow* window;
     unsigned int windowWidth;
     unsigned int windowHeight;
-    GlobalStat* stat;
     
     glm::mat4 projection;
 

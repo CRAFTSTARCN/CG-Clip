@@ -60,9 +60,7 @@ void PolygenController::genNewPoint() {
 
     auto& beg = pointList->front();
     auto& tail = pointList->back();
-    line_dist = dist(glm::vec2((float)tail.x,(float)tail.y), 
-                     glm::vec2((float)beg.x,(float)beg.y),
-                     glm::vec2(x0,y0));
+    line_dist = dist(glm::vec2((float)tail.x,(float)tail.y), glm::vec2((float)beg.x,(float)beg.y),glm::vec2(x0,y0));
     if(std::abs(line_dist) <= threshold) {
         pointList->push_back(Point((int)x0,(int)y0));
         selectedPoint = std::prev(pointList->end(),1);

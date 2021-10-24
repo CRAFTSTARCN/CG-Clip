@@ -66,8 +66,6 @@ void Mesh::addIndex(int index) {
     lastPosE = std::max(lastPosE,change_idx);
 }
 
-
-
 void Mesh::updateVertex(float x, float y, float z, int idx) {
     if(idx * 3 >= vertices.size()) {
         throw OutOfBoundException("Vertex array out of bound");
@@ -86,8 +84,6 @@ void Mesh::updateIndex(int indexVal, int idx) {
     firstPosV = std::min(firstPosV,idx);
     lastPosV = std::max(lastPosV,idx);
 }
-
-
 
 void Mesh::popVertex() {
     if(vertices.empty()) {
@@ -114,7 +110,6 @@ void Mesh::clearVertex() {
     vertices.clear();
     firstPosV = 0;
 }
-
 
 void Mesh::allocVertex(int minSize) {
     int alloc = vertices.size();
@@ -209,7 +204,6 @@ void Mesh::updateBufferData() {
 bool Mesh::useElement() {
     return sizeEBO > 0;
 }
-
 
 void Mesh::drawCall(std::function<void(unsigned int)> rendFunc) {
     rendFunc(VAO);

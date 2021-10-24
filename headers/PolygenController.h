@@ -14,14 +14,12 @@ class PolygenController : public Component {
     std::list<Point>::iterator selectedPoint;
     float threshold;
     int portSize;
-
     bool selected;
 
     float x0, y0, x1, y1;
     int listSize;
 
     public:
-
     PolygenController(float dist_threshold, int port_size);
     ~PolygenController();
 
@@ -35,7 +33,6 @@ class PolygenController : public Component {
     void selectNewPoint();
     void movePoint();
     void erasePoint();
-
 
     float dist(const glm::vec2& a, const glm::vec2& b, const glm::vec2& p);
 };
